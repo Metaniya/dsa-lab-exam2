@@ -1,29 +1,27 @@
 package package1;
 
-import javax.print.attribute.standard.MediaSize;
-import java.util.Arrays;
-import java.util.Scanner;
+def find_number_in_array():
+    # Get the sequence of numbers from the user
+    numbers = []
+    print("Enter a sequence of numbers (type 'done' to finish):")
+    while True:
+        num = input("Enter a number: ")
+        if num.lower() == 'done':
+            break
+        numbers.append(int(num))
 
-public class NumberSearch {
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
-        Scanner scanner= new Scanner(System.in);
-        System.out.println("enter sequence of numbers:" );
-        String input;
-        input = scanner.nextLine();
-        String[] numbers = input.split(",");
-        int[]array=new int[numbers.length];
-        for(int i=0;i<numbers.length;i++){
-            array[i] = Integer.parseInt(numbers[i].trim());
+    # Get the number to search for
+    search_num = int(input("Enter the number to search for: "))
 
-        }
-        System.out.println("enter the number to be searched");
-         int input2;
-        input2=scanner.nextInt();
-       int Numtosearch;
-        Numtosearch = input2;
-        int count = 0;
+    # Count the occurrences of the number in the array
+    count = numbers.count(search_num)
 
-    }
-}
+    # Display the result
+    if count > 0:
+        print(f"The number {search_num} appears {count} times in the array.")
+    else:
+        print(f"The number {search_num} is not present in the array.")
+
+# Call the function to run the program
+find_number_in_array()
 
